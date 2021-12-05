@@ -6,6 +6,7 @@ import yahoofinance.histquotes.HistoricalQuote;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -72,7 +73,13 @@ public class TableUtil
                     if(details[i]==null){
                         writer.write("-" + seperator);
                     }else{
-                        writer.write(details[i].getClose() + seperator);
+                       BigDecimal value= details[i].getClose();
+                       if(value==null){
+                           writer.write("-" + seperator);
+                       }else{
+                           writer.write(details[i].getClose() + seperator);
+                       }
+
                     }
 
                 }

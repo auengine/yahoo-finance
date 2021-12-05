@@ -23,12 +23,14 @@ class DefiDataBuilder
 	void generate() throws IOException
 	{
 		Calendar from=Calendar.getInstance();
-		from.set(2021,06,01,0,0,1);
+		from.set(2014,8,16,0,0,1);
 		Calendar to=Calendar.getInstance();
-		to.set(2021,12,01,0,0,1);
+		to.set(2021,12,03,0,0,1);
 
 		String[] exportList = new String[] {"BTC-USD", "ETH-USD", "LINK-USD", "AVAX-USD"
-			,"BNB-USD","XRP-USD","UNI3-USD","MKR-USD","COMP-USD","USDTRY=X"
+			,"BNB-USD","XRP-USD","UNI3-USD","MKR-USD","COMP-USD","SNX-USD","MIOTA-USD",
+			"XU100.IS","^GSPC","^DJI","^VIX","^TNX","^XAU"
+			,"USDTRY=X"
 		};
 
 		Map<String,Stock> map = YahooFinance.get(exportList,from,to, Interval.DAILY);
